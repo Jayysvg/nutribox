@@ -1,4 +1,5 @@
 export type Category = "fitness" | "tradicional" | "vegetariano" | "lowcarb";
+export type Goal = "emagrecimento" | "massa" | "lowcarb" | "equilibrio";
 
 export interface Product {
   id: string;
@@ -8,14 +9,20 @@ export interface Product {
   category: Category;
   emoji: string;
   calories: number;
+  protein: number;
+  rating: number;
+  reviews: number;
+  popular?: boolean;
+  goals: Goal[];
 }
 
 export type KitSize = 5 | 8 | 10;
 
 export interface Kit {
   size: KitSize;
-  discount: number; // percentage 0-1
+  discount: number; // 0-1
   label: string;
+  tagline: string;
 }
 
 export interface CartItem {
