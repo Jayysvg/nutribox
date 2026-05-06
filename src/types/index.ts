@@ -7,7 +7,8 @@ export interface Product {
   description: string;
   price: number;
   category: Category;
-  emoji: string;
+  emoji?: string;
+  image: string;
   calories: number;
   protein: number;
   rating: number;

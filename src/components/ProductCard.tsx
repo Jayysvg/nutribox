@@ -30,6 +30,7 @@ export const ProductCard = ({
 
   return (
     <article
+      
       className={cn(
         "group relative bg-card rounded-2xl border p-5 transition-smooth cursor-pointer overflow-hidden flex flex-col",
         selected
@@ -39,6 +40,7 @@ export const ProductCard = ({
       )}
       onClick={handleClick}
     >
+    
       {/* Selected check */}
       {selected && (
         <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center animate-pop-in z-10 shadow-soft">
@@ -54,18 +56,23 @@ export const ProductCard = ({
       )}
 
       {/* Visual */}
-      <div className="relative h-28 rounded-xl bg-gradient-to-br from-muted to-muted/40 mb-4 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: "radial-gradient(circle at 30% 30%, hsl(var(--primary) / 0.15), transparent 50%)",
-        }} />
-        <span className="text-6xl group-hover:scale-110 transition-smooth drop-shadow-lg">{product.emoji}</span>
-        <span className={cn(
-          "absolute bottom-2 left-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border backdrop-blur",
+      <div className="relative mb-4 overflow-hidden rounded-xl">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+
+      {/* Badge de categoria */}
+       <span
+        className={cn(
+          "absolute bottom-2 left-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur",
           CATEGORY_BADGE[product.category]
-        )}>
-          {CATEGORY_LABELS[product.category]}
-        </span>
-      </div>
+        )}
+      >
+        {CATEGORY_LABELS[product.category]}
+      </span>
+    </div>
 
       {/* Title + rating */}
       <div className="flex items-start justify-between gap-2 mb-1.5">

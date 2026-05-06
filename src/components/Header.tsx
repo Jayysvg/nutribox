@@ -11,16 +11,13 @@ export const Header = ({ cartCount, onOpenCart }: HeaderProps) => {
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-glow">
-            <Snowflake className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <div>
-            <h1 className="font-display font-extrabold text-lg leading-none tracking-tight">
-              Marmita<span className="text-primary">Fit</span>
-            </h1>
-            <p className="text-[10px] text-muted-foreground uppercase tracking-widest">
-              Congeladas · Saudáveis
-            </p>
+          
+          <div className="flex items-center gap-3">
+            <img 
+                src="/images/logo.png" 
+                alt="NutriBox" 
+                className="h-20 md:h-20 object-contain"
+              />
           </div>
         </div>
 

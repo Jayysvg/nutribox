@@ -60,8 +60,12 @@ export const Cart = ({
                   key={item.product.id}
                   className="flex gap-3 p-3 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-sm transition-smooth animate-slide-up"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center text-3xl flex-shrink-0">
-                    {item.product.emoji}
+                 <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+                    <img
+                      src={item.product.image}
+                      alt={item.product.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-sm leading-tight truncate">{item.product.name}</p>
